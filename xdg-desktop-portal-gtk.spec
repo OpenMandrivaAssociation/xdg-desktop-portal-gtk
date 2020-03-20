@@ -7,7 +7,7 @@ Summary:        Backend implementation for xdg-desktop-portal using GTK+
 Group:          Graphical desktop/GNOME
 License:        LGPLv2+
 URL:            https://github.com/flatpak/%{name}
-Source0:        https://github.com/flatpak/xdg-desktop-portal-gtk/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/flatpak/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
 
 # Upstream patches:
 Patch0:         0001-screencast-Bump-supported-Mutter-version-to-3-280.patch
