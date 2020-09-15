@@ -10,7 +10,7 @@ URL:            https://github.com/flatpak/%{name}
 Source0:        https://github.com/flatpak/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
 
 # Upstream patches:
-Patch0:         0001-screencast-Bump-supported-Mutter-version-to-3-280.patch
+#Patch0:         0001-screencast-Bump-supported-Mutter-version-to-3-280.patch
 
 BuildRequires:  gettext
 BuildRequires:  systemd
