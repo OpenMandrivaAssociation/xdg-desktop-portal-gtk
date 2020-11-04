@@ -1,7 +1,7 @@
 %global xdg_desktop_portal_version 1.6.0
 
 Name:           xdg-desktop-portal-gtk
-Version:        1.6.0
+Version:        1.8.0
 Release:        1
 Summary:        Backend implementation for xdg-desktop-portal using GTK+
 Group:          Graphical desktop/GNOME
@@ -24,7 +24,6 @@ Requires:       xdg-desktop-portal >= %{xdg_desktop_portal_version}
 %{?systemd_requires}
 # Use rich deps to pull in this package when flatpak and gtk3 are both installed
 Supplements:    (flatpak and gtk+3.0)
-
 
 %description
 A backend implementation for xdg-desktop-portal that is using GTK+ and various
