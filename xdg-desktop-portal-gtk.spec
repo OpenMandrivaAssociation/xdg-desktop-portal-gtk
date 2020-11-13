@@ -9,11 +9,8 @@ License:        LGPLv2+
 URL:            https://github.com/flatpak/%{name}
 Source0:        https://github.com/flatpak/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
 
-# Upstream patches:
-Patch0:         0001-screencast-Bump-supported-Mutter-version-to-3-280.patch
-
 BuildRequires:  gettext
-BuildRequires:  systemd
+BuildRequires:  systemd-macros
 BuildRequires:  pkgconfig(fontconfig)
 BuildRequires:  pkgconfig(gnome-desktop-3.0)
 BuildRequires:  pkgconfig(gtk+-unix-print-3.0)
@@ -34,7 +31,7 @@ org.gnome.SessionManager D-Bus interfaces.
 %autosetup -p1
 
 %build
-%configure --disable-silent-rules
+%configure --disable-silent-rules --with-systemduserunitdir=%{_userunitdir}
 %make_build
 
 %install
