@@ -1,13 +1,13 @@
 %global xdg_desktop_portal_version 1.6.0
 
 Name:           xdg-desktop-portal-gtk
-Version:        1.8.0
+Version:        1.10.0
 Release:        1
 Summary:        Backend implementation for xdg-desktop-portal using GTK+
 Group:          Graphical desktop/GNOME
 License:        LGPLv2+
-URL:            https://github.com/flatpak/%{name}
-Source0:        https://github.com/flatpak/%{name}/releases/download/%{version}/%{name}-%{version}.tar.xz
+URL:            https://github.com/flatpak/xdg-desktop-portal-gtk
+Source0:        https://github.com/flatpak/xdg-desktop-portal-gtk/releases/download/%{version}/%{name}-%{version}.tar.xz
 
 BuildRequires:  gettext
 BuildRequires:  systemd-macros
