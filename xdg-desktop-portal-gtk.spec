@@ -2,7 +2,7 @@
 
 Name:           xdg-desktop-portal-gtk
 Version:        1.14.0
-Release:        1
+Release:        2
 Summary:        Backend implementation for xdg-desktop-portal using GTK+
 Group:          Graphical desktop/GNOME
 License:        LGPLv2+
@@ -12,11 +12,16 @@ Source0:        https://github.com/flatpak/xdg-desktop-portal-gtk/releases/downl
 BuildRequires:  gettext
 BuildRequires:  systemd-macros
 BuildRequires:  pkgconfig(fontconfig)
+BuildRequires:  pkgconfig(gsettings-desktop-schemas)
 BuildRequires:  pkgconfig(gnome-desktop-3.0)
 BuildRequires:  pkgconfig(gtk+-unix-print-3.0)
 BuildRequires:  pkgconfig(xdg-desktop-portal) >= %{xdg_desktop_portal_version}
 Requires:       dbus
 Requires:       xdg-desktop-portal >= %{xdg_desktop_portal_version}
+Requires:       gsettings-desktop-schemas
+
+Supplements:    gtk+3
+Supplements:    gtk4
 
 %{?systemd_requires}
 # Use rich deps to pull in this package when flatpak and gtk3 are both installed
@@ -31,7 +36,11 @@ org.gnome.SessionManager D-Bus interfaces.
 %autosetup -p1
 
 %build
-%configure --disable-silent-rules --with-systemduserunitdir=%{_userunitdir}
+%configure \
+            --disable-silent-rules \ 
+            --with-systemduserunitdir=%{_userunitdir} \
+            --enable-settings \
+            --enable-appchooser
 %make_build
 
 %install
