@@ -38,9 +38,7 @@ org.gnome.SessionManager D-Bus interfaces.
 %build
 %configure \
             --disable-silent-rules \ 
-            --with-systemduserunitdir=%{_userunitdir} \
-            --enable-settings \
-            --enable-appchooser
+            --with-systemduserunitdir=%{_userunitdir}
 %make_build
 
 %install
