@@ -34,13 +34,12 @@ org.gnome.SessionManager D-Bus interfaces.
 
 %prep
 %autosetup -p1
-
-%build
 %configure \
-            --disable-silent-rules \ 
             --with-systemduserunitdir=%{_userunitdir} \
             --enable-settings \
             --enable-appchooser
+
+%build
 %make_build
 
 %install
