@@ -1,8 +1,8 @@
 %global xdg_desktop_portal_version 1.14.0
 
 Name:           xdg-desktop-portal-gtk
-Version:        1.14.0
-Release:        2
+Version:        1.14.1
+Release:        1
 Summary:        Backend implementation for xdg-desktop-portal using GTK+
 Group:          Graphical desktop/GNOME
 License:        LGPLv2+
