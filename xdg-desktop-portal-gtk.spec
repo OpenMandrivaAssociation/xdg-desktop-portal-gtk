@@ -40,8 +40,8 @@ org.gnome.SessionManager D-Bus interfaces.
 
 %build
 %meson \
-        -Dappchooser=true \
-        -Dsettings=true \
+        -Dappchooser=enabled \
+        -Dsettings=enabled \
         -Dsystemd-user-unit-dir=%{_userunitdir}
             
 %meson_build
