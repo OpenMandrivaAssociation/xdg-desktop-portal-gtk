@@ -1,14 +1,15 @@
 %global xdg_desktop_portal_version 1.14.0
 
 Name:           xdg-desktop-portal-gtk
-Version:        1.14.1
-Release:        3
+Version:        1.15.1
+Release:        1
 Summary:        Backend implementation for xdg-desktop-portal using GTK+
 Group:          Graphical desktop/GNOME
 License:        LGPLv2+
 URL:            https://github.com/flatpak/xdg-desktop-portal-gtk
 Source0:        https://github.com/flatpak/xdg-desktop-portal-gtk/releases/download/%{version}/%{name}-%{version}.tar.xz
 
+BuildRequires:  meson
 BuildRequires:  gettext
 BuildRequires:  systemd-macros
 BuildRequires:  pkgconfig(fontconfig)
@@ -36,16 +37,17 @@ org.gnome.SessionManager D-Bus interfaces.
 
 %prep
 %autosetup -p1
-%configure \
-            --with-systemduserunitdir=%{_userunitdir} \
-            --enable-settings \
-            --enable-appchooser
 
 %build
-%make_build
+%meson \
+        -Dappchooser=true \
+        -Dsettings=true \
+        -Dsystemd-user-unit-dir=%{_userunitdir}
+            
+%meson_build
 
 %install
-%make_install
+%meson_install
 %find_lang %{name}
 
 %post
