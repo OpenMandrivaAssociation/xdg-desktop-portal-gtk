@@ -1,4 +1,4 @@
-%global xdg_desktop_portal_version 1.14.0
+%global xdg_desktop_portal_version 1.15.1
 
 Name:           xdg-desktop-portal-gtk
 Version:        1.15.1
